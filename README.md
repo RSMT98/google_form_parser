@@ -8,7 +8,7 @@
 
 Если вдруг не получилось распарсить какие-то варианты ответов на какой-то вопрос, Вы увидите строчку "I CAN'T PARSE ANY ANSWERS!!!". В таком случае, придётся парсить этот вопрос "глазами".
 Например, такого вида таблицы не парсятся:
-!(https://github.com/RSMT98/google_form_parser/blob/main/we%20don't%20parse%20these%20ones.jpg)
+![](https://github.com/RSMT98/google_form_parser/blob/main/we%20don't%20parse%20these%20ones.jpg)
 
 ### Подробная версия
 
