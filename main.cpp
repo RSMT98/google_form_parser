@@ -106,6 +106,12 @@ int main(int argc, char *argv[])
         }
         replace_all(question, "<br>", "");
         replace_all(question, "</div>", "");
+        replace_all(question, "<b>", "");
+        replace_all(question, "<u>", "");
+        replace_all(question, "<i>", "");
+        replace_all(question, "</b>", "");
+        replace_all(question, "</u>", "");
+        replace_all(question, "</i>", "");
         replace_all(question, "<div>", "\n" + string(to_string(question_num).length() + 2, ' '));
         cout << question << '\n';
 
