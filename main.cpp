@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
                 answer += s[0];
                 s = s.substr(1);
             }
-            if (answer == "Выбрать" && !was_skip)
+            if (answer == "Выбрать" && (ans_num == 1) && !was_skip)
                 was_skip = true;
             else
             {
