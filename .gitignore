@@ -35,3 +35,4 @@ input.txt
 .vscode/launch.json
 .vscode/c_cpp_properties.json
 output.txt
+table_output.txt
