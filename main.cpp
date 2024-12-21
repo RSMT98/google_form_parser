@@ -72,15 +72,11 @@ void replace_all(str &s, const str &from, const str &to)
     }
 }
 
-int main(int argc, char *argv[])
+int main()
 {
-    str input_path;
-    if (argc > 1)
-        input_path = argv[1];
-    else
-        return 0;
-    ifstream cin(input_path);
+    ifstream cin("input.txt");
     ofstream cout("output.txt");
+    ofstream tableout("table_output.txt");
     str s;
     {
         str tmp_s;
@@ -88,7 +84,7 @@ int main(int argc, char *argv[])
             s += tmp_s;
     }
     size_t question_pos;
-    ull question_num = 1;
+    ull question_num = 0;
     auto get_question_pos = [&]() -> bool
     {
         return ((question_pos = s.find("<span class=\"M7eMe\">")) != string::npos);
@@ -114,6 +110,7 @@ int main(int argc, char *argv[])
         replace_all(question, "</i>", "");
         replace_all(question, "<div>", "\n" + string(to_string(question_num).length() + 2, ' '));
         cout << question << '\n';
+        tableout << question << '\t';
 
         size_t answer_pos;
         auto get_answer_pos = [&]() -> bool
@@ -145,15 +142,18 @@ int main(int argc, char *argv[])
             {
                 cout << "\t" << ans_num++ << ") ";
                 cout << answer << '\n';
+                tableout << (ans_num - 1) << ") " << answer << ' ';
             }
         }
         if (ans_num == 1)
         {
             cout << "I CAN'T PARSE ANY ANSWERS!!!" << '\n';
+            tableout << "I CAN'T PARSE ANY ANSWERS!!!";
         }
 
         ++question_num;
         cout << '\n';
+        tableout << '\n';
     }
     return 0;
 }
